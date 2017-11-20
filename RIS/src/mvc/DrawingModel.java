@@ -14,5 +14,14 @@ public class DrawingModel {
 	public Shape get(int i) {
 		return shapes.get(i);
 	}
+
+	public boolean add(Shape shape) {
+		return shapes.add(shape);
+	}
+
+	public boolean remove(Shape shape) {
+		
+		 return shapes.remove(shape);
+	}
 	
 }

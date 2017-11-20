@@ -10,6 +10,10 @@ public abstract class Shape implements Moveable{
 		this.color = color;
 	}
 	
+	public Shape() {
+	
+	}
+
 	public abstract void draw(Graphics g);
 	
 	public Color getBoja() {

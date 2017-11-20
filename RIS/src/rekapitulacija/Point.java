@@ -7,6 +7,9 @@ public class Point extends Shape{
 	private int x;
 	private int y;
 	
+	public Point() {
+		super();
+	}
 	public Point(int x, int y, Color color) {
 		super(color);
 		this.x = x;
@@ -30,6 +33,11 @@ public class Point extends Shape{
 	public void moveBy(int x, int y) {
 		this.x += x;
 		this.y = this.y + y;
+	}
+	
+	public String toString()
+	{
+		return "("+x+","+y+")";
 	}
 	
 	public int getX() {
