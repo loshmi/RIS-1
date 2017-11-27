@@ -23,5 +23,8 @@ public class CmdAddPoint implements Command {
 	public void unexecute() {
 		model.remove(point);
 	}
-
+	
+	public String toString() {
+		return "Added: "+point;
+	}
 }
