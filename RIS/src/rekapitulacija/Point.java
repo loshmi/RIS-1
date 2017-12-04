@@ -2,8 +2,13 @@ package rekapitulacija;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.io.Serializable;
 
-public class Point extends Shape{
+public class Point extends Shape implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6623965826167030877L;
 	private int x;
 	private int y;
 	
@@ -14,6 +19,10 @@ public class Point extends Shape{
 		super(color);
 		this.x = x;
 		this.y = y;
+	}
+	
+	public void metoda() {
+		System.out.println("metoda");
 	}
 	
 	@Override
@@ -34,7 +43,18 @@ public class Point extends Shape{
 		this.x += x;
 		this.y = this.y + y;
 	}
-	
+	public boolean equals(Object obj) {
+		if(obj instanceof Point) {
+			Point point = (Point)obj;
+			if (x==point.getX() && y==point.getY()) {
+				return true;
+			} else {
+				return false;
+			}
+		} else {
+			return false;
+		}
+	}
 	public String toString()
 	{
 		return "("+x+","+y+")";

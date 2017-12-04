@@ -11,6 +11,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JList;
 import javax.swing.JScrollPane;
+import javax.swing.ListSelectionModel;
 
 public class DrawingFrame extends JFrame{
 
@@ -39,27 +40,44 @@ public class DrawingFrame extends JFrame{
 		JPanel pnlNorth = new JPanel();
 		getContentPane().add(pnlNorth, BorderLayout.NORTH);
 		
-		JButton btnSave = new JButton("Save");
-		btnSave.addActionListener(new ActionListener() {
+		JButton btnSaveModel = new JButton("Save model");
+		btnSaveModel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				controller.save();
+				controller.saveModel();
 			}
 		});
 		
-		JButton btnOpen = new JButton("Open");
-		btnOpen.addActionListener(new ActionListener() {
+		JButton btnOpenLog = new JButton("Open log");
+		btnOpenLog.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				controller.open();
 			}
 		});
-		pnlNorth.add(btnOpen);
-		pnlNorth.add(btnSave);
+		pnlNorth.add(btnOpenLog);
+		
+		JButton btnOpenModel = new JButton("Open model");
+		btnOpenModel.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controller.openModel();
+			}
+		});
+		pnlNorth.add(btnOpenModel);
+		pnlNorth.add(btnSaveModel);
+		
+		JButton btnDelete = new JButton("Delete");
+		btnDelete.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				controller.delete();
+			}
+		});
+		pnlNorth.add(btnDelete);
 		
 		JPanel pnlSouth = new JPanel();
 		getContentPane().add(pnlSouth, BorderLayout.SOUTH);
 		
 		JScrollPane scrollPaneLog = new JScrollPane();
 		pnlSouth.add(scrollPaneLog);
+		lstLog.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		
 		
 		scrollPaneLog.setViewportView(lstLog);

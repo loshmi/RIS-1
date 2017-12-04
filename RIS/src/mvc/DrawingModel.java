@@ -1,10 +1,11 @@
 package mvc;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 import rekapitulacija.Shape;
 
-public class DrawingModel {
+public class DrawingModel implements Serializable{
 	private ArrayList<Shape> shapes = new ArrayList<Shape>();
 	
 	public ArrayList<Shape> getShapes() {
